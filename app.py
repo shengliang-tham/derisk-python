@@ -10,6 +10,9 @@ from flask import jsonify
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
+os.environ['http_proxy'] = os.environ.get('http://fixie:CRFqvQi9rPjupQ5@velodrome.usefixie.com:80', '')
+os.environ['https_proxy'] = os.environ.get('http://fixie:CRFqvQi9rPjupQ5@velodrome.usefixie.com:80', '')
+
 @app.route("/", methods=["GET"])
 def home():
     return "hello"
